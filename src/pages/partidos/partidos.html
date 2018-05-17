@@ -1,0 +1,49 @@
+<!--
+  Generated template for the PartidosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>partidos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-fab top right edge>
+        <button  ion-fab color="button" mini (click)="salir()"><ion-icon name="backspace"></ion-icon></button>
+    </ion-fab>
+
+    <ion-card class="list">
+       <div>
+          <ion-list>
+            <ion-card>
+            <ion-item *ngFor="let item of partidos" >
+              <!--<h2><b>Fecha: </b> {{item.when | date:'dd/MM/yyyy HH:mm'}}</h2>
+              <h2><b>Equipo: </b> {{item.teamOne.name}}</h2>
+              <h2><b>Equipo: </b> {{item.teamTwo.name}}</h2>-->
+              <div class="row header">
+                 <div class="col">Fecha y hora</div>
+                 <div class="col">Equipo A</div>
+                 <div class="col">Equipo B</div>
+                 <!--<div class="col">Pronóstico</div>-->
+              </div>
+              <div class="row">
+                  <div class="col">{{item.when | date:'dd/MM/yyyy HH:mm'}}</div>
+                  <div class="col">{{item.teamOne.name}}</div>
+                  <div class="col">{{item.teamTwo.name}}</div>                  
+              </div>
+              
+                  <button   middle right edgeclass="button" (click)='showPromt(item)'   ion-button color="secondary" round><ion-icon name="bulb"></ion-icon></button>
+              
+            </ion-item>
+          </ion-card>
+          </ion-list>
+       </div>
+    </ion-card>
+
+</ion-content>
